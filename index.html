@@ -5,77 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRC Coin - Cryptocurrency Landing Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-<style>
-    /* Custom font and additional styling */
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        background-color: #ffffff; /* White background for contrast */
-    }
-    h1 {
-        font-family: 'Georgia', serif;
-        font-weight: bold;
-        color: white; /* Reverted header color */
-    }
-    h2, h4 {
-        font-family: 'Georgia', serif;
-        font-weight: bold;
-        color: #2c3e50; /* Dark color for other headings */
-    }
-    /* Text color for different sections */
-    .vision-mission p, /* Mission and Vision */
-    .problems p, /* Problems */
-    .features p { /* Features */
-        font-size: 1.1rem;
-        color: #34495e; /* Darker gray for normal text */
-    }
-    footer p {
-        font-size: 1rem; /* Footer text size */
-        color: white; /* White text for footer */
-    }
-    /* Additional styling for sections */
-    section {
-        padding: 60px 0;
-    }
-    .vision-mission {
-        background-color: #f8f9fa; /* Light gray for mission/vision section */
-        border: 1px solid #dee2e6; /* Border for definition */
-        border-radius: 5px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    .problems {
-        background-color: #e9ecef; /* Slightly darker gray for problems section */
-        border-radius: 5px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    .features {
-        background-color: white; /* Even darker gray for features section */
-        border-radius: 5px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    footer {
-        background-color: #343a40; /* Dark background for footer */
-        color: white; /* White text for footer */
-    }
-    /* Custom colors for section headings */
-    #vision h4, #concept h2, #problems h2, #features h2 {
-        color: #27ae60; /* Green for section headings */
-    }
-    /* Custom colors for links */
-    a {
-        color: #3498db; /* Blue for links */
-    }
-    a:hover {
-        color: #2980b9; /* Darker blue for link hover */
-    }
-</style>
-    
+    <style>
+        /* Custom font and additional styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff; /* White background for contrast */
+        }
+        h1 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: white; /* Reverted header color */
+        }
+        h2, h4 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #2c3e50; /* Dark color for other headings */
+        }
+        /* Text color for different sections */
+        .vision-mission p, /* Mission and Vision */
+        .problems p, /* Problems */
+        .features p { /* Features */
+            font-size: 1.1rem;
+            color: #34495e; /* Darker gray for normal text */
+        }
+        footer p {
+            font-size: 1rem; /* Footer text size */
+            color: white; /* White text for footer */
+        }
+        /* Additional styling for sections */
+        section {
+            padding: 60px 0;
+        }
+        .vision-mission {
+            background-color: #f8f9fa; /* Light gray for mission/vision section */
+            border: 1px solid #dee2e6; /* Border for definition */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .problems {
+            background-color: #e9ecef; /* Slightly darker gray for problems section */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .features {
+            background-color: white; /* Even darker gray for features section */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #343a40; /* Dark background for footer */
+            color: white; /* White text for footer */
+        }
+        /* Custom colors for section headings */
+        #vision h4, #concept h2, #problems h2, #features h2 {
+            color: #27ae60; /* Green for section headings */
+        }
+        /* Custom colors for links */
+        a {
+            color: #3498db; /* Blue for links */
+        }
+        a:hover {
+            color: #2980b9; /* Darker blue for link hover */
+        }
+        .card {
+            margin-bottom: 20px; /* Add some margin for cards */
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">TrashCoin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#vision">Vision & Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#concept">Our Concept</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#problems">Problems</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Welcome Section -->
     <header class="bg-primary text-white text-center py-5">
         <h1>♻️Welcome to TrashCoin♻️</h1>
@@ -89,16 +116,16 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4>Vision</h4>
-                    <p>"To revolutionize waste management by empowering individuals to turn trash into tangible value, fostering a cleaner planet and a more sustainable future through the power of cryptocurrency"</p>
+                    <p>"To revolutionize waste management by empowering individuals to turn trash into tangible value, fostering a cleaner planet and a more sustainable future through the power of cryptocurrency."</p>
                 </div>
                 <div class="col-md-6">
                     <h4>Mission</h4>
                     <ul>
-                        <li>1. <strong>Encourage Responsible Recycling:</strong> Incentivize individuals and communities to actively participate in recycling programs by providing financial rewards for environmentally conscious actions.</li>
-                        <li>2. <strong>Promote Sustainability:</strong> Collaborate with businesses, organizations, and governments to reduce waste and promote eco-friendly practices using TrashCoin as a currency of environmental responsibility.</li>
-                        <li>3. <strong>Empower Communities:</strong> Create a decentralized platform where users can contribute to a cleaner environment and gain rewards, transforming waste management into a rewarding habit.</li>
-                        <li>4. <strong>Raise Environmental Awareness:</strong> Educate the public about the importance of recycling, waste reduction, and sustainable living, while making eco-friendly choices economically rewarding.</li>
-                        <li>5. <strong>Leverage Blockchain Technology:</strong> Ensure transparency, security, and efficiency in rewarding recycling efforts by utilizing blockchain technology for a trustworthy and scalable system.</li>
+                        <li><strong>Encourage Responsible Recycling:</strong> Incentivize individuals and communities to actively participate in recycling programs by providing financial rewards for environmentally conscious actions.</li>
+                        <li><strong>Promote Sustainability:</strong> Collaborate with businesses, organizations, and governments to reduce waste and promote eco-friendly practices using TrashCoin as a currency of environmental responsibility.</li>
+                        <li><strong>Empower Communities:</strong> Create a decentralized platform where users can contribute to a cleaner environment and gain rewards, transforming waste management into a rewarding habit.</li>
+                        <li><strong>Raise Environmental Awareness:</strong> Educate the public about the importance of recycling, waste reduction, and sustainable living, while making eco-friendly choices economically rewarding.</li>
+                        <li><strong>Leverage Blockchain Technology:</strong> Ensure transparency, security, and efficiency in rewarding recycling efforts by utilizing blockchain technology for a trustworthy and scalable system.</li>
                     </ul>
                 </div>
             </div>
@@ -122,17 +149,17 @@
     
     <!-- Problem Statements Section -->
     <section id="problems" class="problems">
-    <div class="container text-center"> <!-- Added text-center class here -->
-        <h2>Problems We Solve</h2>
-        <ul class="list-group mx-auto" style="max-width: 600px;"> <!-- Centering the list -->
-            <li class="list-group-item">Lack of User Participation in Recycling Programs</li>
-            <li class="list-group-item">Difficulties in Collaborating with Vendors and Businesses</li>
-            <li class="list-group-item">User Trust in Cryptocurrency and Blockchain</li>
-            <li class="list-group-item">Lack of Public Awareness on Environmental Issues</li>
-            <li class="list-group-item">Regulatory Hurdles in Different Regions</li>
-        </ul>
-    </div>
-</section>
+        <div class="container text-center"> <!-- Added text-center class here -->
+            <h2>Problems We Solve</h2>
+            <ul class="list-group mx-auto" style="max-width: 600px;"> <!-- Centering the list -->
+                <li class="list-group-item">Lack of User Participation in Recycling Programs</li>
+                <li class="list-group-item">Difficulties in Collaborating with Vendors and Businesses</li>
+                <li class="list-group-item">User Trust in Cryptocurrency and Blockchain</li>
+                <li class="list-group-item">Lack of Public Awareness on Environmental Issues</li>
+                <li class="list-group-item">Regulatory Hurdles in Different Regions</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
@@ -140,57 +167,72 @@
             <h2 class="text-center">Product Features</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <h4>Feature 1</h4>
-                    <p>Cryptocurrency Rewards System</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 1</h4>
+                            <p>Cryptocurrency Rewards System</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Feature 2</h4>
-                    <p>Vendor Partnerships</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 2</h4>
+                            <p>Vendor Partnerships</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Feature 3</h4>
-                    <p>Blockchain Transparency</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 3</h4>
+                            <p>Blockchain Transparency</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Feature 4</h4>
-                    <p>User-Friendly Mobile App</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 4</h4>
+                            <p>User-Friendly Mobile App</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Feature 5</h4>
-                    <p>Environmental Impact Tracking</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 5</h4>
+                            <p>Community Engagement</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Feature 6</h4>
-                    <p>Geolocation for Drop-off Points</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Feature 7</h4>
-                    <p>Sustainable Product Marketplace</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Feature 8</h4>
-                    <p>Community Engagement & Challenges</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Feature 9</h4>
-                    <p>Recycling Verification System</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Feature 6</h4>
+                            <p>Real-Time Rewards Tracking</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-4">
-        <h5>Contact Us</h5>
-        <p>Mobile: +62 811 3999 100 | Email: <a href="mailto:williamskesuma@gmail.com" class="text-light">williamskesuma@gmail.com</a></p>
-        <p>Follow us on social media: <strong>@TRC.COIN</strong></p>
-        <p>Documentation: <a href="https://william-sanjaya-kesuma.gitbook.io/trash-cash" class="text-light" target="_blank">GitBook</a></p>
-        <p>&copy; 2024 TRC Coin. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <p>Follow us on:</p>
+            <div>
+                <a href="https://twitter.com/TRC_COIN" class="text-light">Twitter</a> |
+                <a href="https://facebook.com/TRC_COIN" class="text-light">Facebook</a> |
+                <a href="https://instagram.com/TRC_COIN" class="text-light">Instagram</a>
+            </div>
+            <p>© 2024 TrashCoin. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

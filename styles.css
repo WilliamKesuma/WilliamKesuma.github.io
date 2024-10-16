@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    padding: 60px 0;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+}
+
+.card {
+    border: none;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+i {
+    font-size: 50px;
+}

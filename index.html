@@ -6,80 +6,65 @@
     <title>TRC Coin - Cryptocurrency Landing Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        /* Custom font and additional styling */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
         }
-
+        h1, h2, h4 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #34495e;
+        }
         /* Additional styling for sections */
         section {
             padding: 60px 0;
         }
-        
         .vision-mission {
-            background-color: #e1f5fe;
-            border: 1px solid #b3e5fc;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 20px;
         }
-
         .problems {
-            background-color: #fff3e0;
+            background-color: #e9ecef;
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 20px;
         }
-
         .features {
-            background-color: #e8f5e9;
+            background-color: #f1f3f5;
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 20px;
         }
-
-        h1, h2, h4 {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-weight: 600;
-            color: #1e88e5; /* Primary color for header */
-        }
-
-        h2 {
-            font-weight: 600;
-            color: #43a047; /* Secondary color for section headers */
-        }
-
-        h4 {
-            font-weight: 400;
-            color: #5d4037; /* Muted color for features */
-        }
-
         footer {
-            background-color: #263238;
+            background-color: #343a40;
             color: white;
         }
-
-        a {
-            color: #1e88e5; /* Link color */
-            text-decoration: none;
+        /* Custom colors for section headings */
+        #vision h4, #concept h2, #problems h2, #features h2 {
+            color: #27ae60; /* Green */
         }
-
+        /* Custom colors for links */
+        a {
+            color: #3498db; /* Blue */
+        }
         a:hover {
-            text-decoration: underline; /* Link hover effect */
+            color: #2980b9; /* Darker Blue */
         }
     </style>
 </head>
 <body>
     <!-- Welcome Section -->
     <header class="bg-primary text-white text-center py-5">
-        <h1>♻️ Welcome to TrashCoin ♻️</h1>
+        <h1>♻️Welcome to TrashCoin♻️</h1>
         <img src="banner.jpg" alt="TrashCoin Banner Logo" class="img-fluid mb-3" style="max-width: 50%; height: auto;">
         <p>TrashCoin is a cryptocurrency where users give us trash to recycle into other utilities. In exchange for the trash, the users get a TrashCoin coin which can be exchanged for promotions such as discounts or vouchers to different vendors.</p>
     </header>
@@ -94,7 +79,13 @@
                 </div>
                 <div class="col-md-6">
                     <h4>Mission</h4>
-                    <p>Encouraging responsible recycling can be achieved by incentivizing individuals and communities to actively participate in recycling programs through financial rewards for eco-friendly actions. By collaborating with businesses, organizations, and governments, we can promote sustainability using TrashCoin as a currency of environmental responsibility. This decentralized platform empowers users to contribute to a cleaner environment while gaining rewards, transforming waste management into a rewarding habit. Raising awareness about the importance of recycling, waste reduction, and sustainable living will further emphasize that eco-friendly choices can be economically rewarding. Leveraging blockchain technology ensures transparency, security, and efficiency in rewarding recycling efforts, creating a trustworthy and scalable system for all participants.</p>
+                    <ul>
+                        <li>1. <strong>Encourage Responsible Recycling:</strong> Incentivize individuals and communities to actively participate in recycling programs by providing financial rewards for environmentally conscious actions.</li>
+                        <li>2. <strong>Promote Sustainability:</strong> Collaborate with businesses, organizations, and governments to reduce waste and promote eco-friendly practices using TrashCoin as a currency of environmental responsibility.</li>
+                        <li>3. <strong>Empower Communities:</strong> Create a decentralized platform where users can contribute to a cleaner environment and gain rewards, transforming waste management into a rewarding habit.</li>
+                        <li>4. <strong>Raise Environmental Awareness:</strong> Educate the public about the importance of recycling, waste reduction, and sustainable living, while making eco-friendly choices economically rewarding.</li>
+                        <li>5. <strong>Leverage Blockchain Technology:</strong> Ensure transparency, security, and efficiency in rewarding recycling efforts by utilizing blockchain technology for a trustworthy and scalable system.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -183,7 +174,7 @@
         <p>&copy; 2024 TRC Coin. All rights reserved.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>

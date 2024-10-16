@@ -80,28 +80,43 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">TrashCoin</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#vision">Vision & Mission</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#concept">Our Concept</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#problems">Problems</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Features</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <a class="navbar-brand" href="#">TrashCoin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#vision">Vision & Mission</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#concept">Our Concept</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Features
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#features">Overview</a>
+                    <a class="dropdown-item" href="#feature1">Feature 1</a>
+                    <a class="dropdown-item" href="#feature2">Feature 2</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#feature3">Feature 3</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#problems">Problems</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <!-- Welcome Section -->
     <header class="bg-primary text-white text-center py-5">
@@ -148,75 +163,94 @@
     </section>
     
     <!-- Problem Statements Section -->
-    <section id="problems" class="problems">
-        <div class="container text-center"> <!-- Added text-center class here -->
-            <h2>Problems We Solve</h2>
-            <ul class="list-group mx-auto" style="max-width: 600px;"> <!-- Centering the list -->
-                <li class="list-group-item">Lack of User Participation in Recycling Programs</li>
-                <li class="list-group-item">Difficulties in Collaborating with Vendors and Businesses</li>
-                <li class="list-group-item">User Trust in Cryptocurrency and Blockchain</li>
-                <li class="list-group-item">Lack of Public Awareness on Environmental Issues</li>
-                <li class="list-group-item">Regulatory Hurdles in Different Regions</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="text-center">Product Features</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 1</h4>
-                            <p>Cryptocurrency Rewards System</p>
-                        </div>
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2 class="text-center">Product Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 1</h4>
+                        <p>Cryptocurrency Rewards System</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 2</h4>
-                            <p>Vendor Partnerships</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 2</h4>
+                        <p>Vendor Partnerships</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 3</h4>
-                            <p>Blockchain Transparency</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 3</h4>
+                        <p>Blockchain Transparency</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 4</h4>
-                            <p>User-Friendly Mobile App</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 4</h4>
+                        <p>User-Friendly Mobile App</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 5</h4>
-                            <p>Community Engagement</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 5</h4>
+                        <p>Community Engagement</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>Feature 6</h4>
-                            <p>Real-Time Rewards Tracking</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 6</h4>
+                        <p>Real-Time Rewards Tracking</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 7</h4>
+                        <p>Gamification of Recycling</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 8</h4>
+                        <p>Educational Resources</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 9</h4>
+                        <p>Flexible Payment Options</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Feature 10</h4>
+                        <p>Partnership with Local Governments</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="text-center py-4">

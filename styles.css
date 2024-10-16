@@ -26,28 +26,32 @@ footer a:hover {
     text-decoration: underline;
 }
 
-.cube {
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    background-color: rgba(0, 0, 0, 0.5); /* Dimmed black background */
-    color: white; /* Change text color for better contrast */
-    margin-bottom: 20px; /* Space between cubes */
+.vision-section, .mission-section {
+    background-color: rgba(240, 248, 255, 0.8); /* Light background with transparency */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the box */
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
-.cube h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px; /* Space below heading */
+h2 {
+    font-size: 28px; /* Larger heading size */
+    color: #333; /* Dark text color for headings */
 }
 
-.cube ol {
-    padding-left: 20px; /* Indent list */
-    list-style-type: decimal; /* Decimal numbering */
+blockquote {
+    font-style: italic; /* Italicized text for the quote */
+    color: #555; /* Gray text color for better contrast */
+    margin: 10px 0 20px; /* Space above and below the quote */
 }
 
-.cube li {
+ol {
+    padding-left: 20px; /* Indent for ordered list */
+}
+
+li {
     margin-bottom: 10px; /* Space between list items */
+    line-height: 1.5; /* Increase line height for readability */
 }
 
 

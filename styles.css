@@ -40,3 +40,9 @@ footer a:hover {
 #features .cube:hover {
     transform: scale(1.05);
 }
+
+.text-start {
+    text-align: left; /* Additional class to ensure left alignment */
+}
+
+

@@ -76,47 +76,50 @@
         .card {
             margin-bottom: 20px; /* Add some margin for cards */
         }
+
+        .custom-navbar {
+    background-color: #004080; /* Change this to your desired background color */
+}
+
+.custom-navbar .nav-link {
+    color: white; /* Ensure the text color is visible against the dark background */
+}
+
+.custom-navbar .nav-link:hover {
+    color: #f1f1f1; /* Lighten the text color on hover for better visibility */
+}
+
+.custom-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Optional: Adjust the border color of the toggler */
+}
+
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
     <a class="navbar-brand" href="#">TrashCoin</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#vision">Vision & Mission</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#concept">Our Concept</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Features
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#features">Overview</a>
-                    <a class="dropdown-item" href="#feature1">Feature 1</a>
-                    <a class="dropdown-item" href="#feature2">Feature 2</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#feature3">Feature 3</a>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#problems">Problems</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#faq">FAQ</a>
+                <a class="nav-link" href="#features">Features</a>
             </li>
         </ul>
     </div>
 </nav>
+
 
     <!-- Welcome Section -->
     <header class="bg-primary text-white text-center py-5">
@@ -204,7 +207,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Feature 5</h4>
-                        <p>Community Engagement</p>
+                        <p>Environmental Impact Tracking</p>
                     </div>
                 </div>
             </div>
@@ -212,7 +215,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Feature 6</h4>
-                        <p>Real-Time Rewards Tracking</p>
+                        <p>Geolocation for Drop-off Points</p>
                     </div>
                 </div>
             </div>
@@ -220,7 +223,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Feature 7</h4>
-                        <p>Gamification of Recycling</p>
+                        <p>Sustainable Product Marketplace</p>
                     </div>
                 </div>
             </div>
@@ -228,7 +231,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Feature 8</h4>
-                        <p>Educational Resources</p>
+                        <p>Community Engagement & Challenges</p>
                     </div>
                 </div>
             </div>
@@ -236,15 +239,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Feature 9</h4>
-                        <p>Flexible Payment Options</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Feature 10</h4>
-                        <p>Partnership with Local Governments</p>
+                        <p>Recycling Verification Systems</p>
                     </div>
                 </div>
             </div>

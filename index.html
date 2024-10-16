@@ -73,9 +73,6 @@
         a:hover {
             color: #2980b9; /* Darker blue for link hover */
         }
-        .card {
-            margin-bottom: 20px; /* Add some margin for cards */
-        }
 
         .custom-navbar {
     background-color: #004080; /* Change this to your desired background color */
@@ -92,6 +89,24 @@
 .custom-navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.1); /* Optional: Adjust the border color of the toggler */
 }
+        .card {
+    margin-bottom: 20px; /* Add some margin for cards */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+.card:hover {
+    background-color: #004080; /* Change background to blue on hover */
+    color: white; /* Change text color to white on hover */
+}
+
+.card:hover h4 {
+    color: white; /* Ensure heading color is white on hover */
+}
+
+.card:hover p {
+    color: white; /* Ensure paragraph text color is white on hover */
+}
+
 
     </style>
 </head>
@@ -166,6 +181,19 @@
     </section>
     
     <!-- Problem Statements Section -->
+    <section id="problems" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Problems We Solve</h2>
+            <ul class="list-group">
+                <li class="list-group-item">1. Lack of User Participation in Recycling Programs</li>
+                <li class="list-group-item">2. Difficulties in Collaborating with Vendors and Businesses</li>
+                <li class="list-group-item">3. User Trust in Cryptocurrency and Blockchain</li>
+                <li class="list-group-item">4. Lack of Public Awareness on Environmental Issues</li>
+                <li class="list-group-item">5. Regulatory Hurdles in Different Regions</li>
+            </ul>
+        </div>
+    </section>
+    
 <!-- Features Section -->
 <section id="features" class="features">
     <div class="container">
@@ -246,7 +274,6 @@
         </div>
     </div>
 </section>
-
     <!-- Footer -->
     <footer class="text-center py-4">
         <div class="container">

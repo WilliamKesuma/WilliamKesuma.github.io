@@ -264,7 +264,7 @@ h2 {
 .exp-carousel-track {
   display: flex;
   width: max-content;
-  animation: scrollExperience 35s linear infinite;
+  animation: scrollExperience 30s linear infinite;
 }
 .exp-photo {
   width: 480px;

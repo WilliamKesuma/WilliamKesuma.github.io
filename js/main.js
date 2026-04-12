@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.fade-up, .exp-item, .project-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-up, .exp-item, .project-card, .timeline-item').forEach(el => observer.observe(el));
 
 document.querySelectorAll('.project-card').forEach((card, i) => {
   card.style.transitionDelay = `${i * 0.08}s`;
@@ -168,7 +168,6 @@ function initCarousel() {
   const N = cats.length;
   totEl.textContent = String(N).padStart(2, '0');
 
-  // Clone last + all real slides + clone first for seamless infinite loop
   [cats[N - 1], ...cats, cats[0]].forEach(cat => {
     const s = document.createElement('div');
     s.className = 'slide';
@@ -183,7 +182,6 @@ function initCarousel() {
     track.appendChild(s);
   });
 
-  // Build dots
   cats.forEach((_, i) => {
     const d = document.createElement('div');
     d.className = 'dot' + (i === 0 ? ' active' : '');
@@ -191,38 +189,29 @@ function initCarousel() {
     dotsEl.appendChild(d);
   });
 
-  const SPEED = 0.8; // px per frame
- let rawPx = 0;
-  let currentIdx = 0;   // ← add this
+  const SPEED = 0.8;
+  let rawPx = 0;
+  let currentIdx = 0;
   let paused = false;
   let pauseTimer = null;
 
-  function getW() {
-    return track.querySelector('.slide').offsetWidth;
-  }
-
-  function applyPx(px) {
-    track.style.transform = `translateX(-${px}px)`;
-  }
-
+  function getW() { return track.querySelector('.slide').offsetWidth; }
+  function applyPx(px) { track.style.transform = `translateX(-${px}px)`; }
   function updateUI(idx) {
     document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
     curEl.textContent = String(idx + 1).padStart(2, '0');
   }
-
   function jumpTo(i) {
-    currentIdx = ((i % N) + N) % N;   // ← keep currentIdx in sync
+    currentIdx = ((i % N) + N) % N;
     rawPx = (currentIdx + 1) * getW();
     applyPx(rawPx);
     updateUI(currentIdx);
   }
-
   function pauseFor(ms) {
     paused = true;
     clearTimeout(pauseTimer);
     pauseTimer = setTimeout(() => { paused = false; }, ms);
   }
-
   function animate() {
     if (!paused) {
       const w = getW();
@@ -230,7 +219,6 @@ function initCarousel() {
       if (rawPx >= (N + 1) * w) rawPx -= N * w;
       if (rawPx < w)             rawPx += N * w;
       applyPx(rawPx);
-      // Sync currentIdx from drift position
       const driftIdx = (((Math.round(rawPx / w) - 1) % N) + N) % N;
       if (driftIdx !== currentIdx) {
         currentIdx = driftIdx;
@@ -240,58 +228,60 @@ function initCarousel() {
     requestAnimationFrame(animate);
   }
 
-  prevBtn.addEventListener('click', () => {
-    jumpTo((currentIdx - 1 + N) % N);
-    pauseFor(2000);
-  });
-  nextBtn.addEventListener('click', () => {
-    jumpTo((currentIdx + 1) % N);
-    pauseFor(2000);
-  });
-
-  // Pause drift on hover
+  prevBtn.addEventListener('click', () => { jumpTo((currentIdx - 1 + N) % N); pauseFor(2000); });
+  nextBtn.addEventListener('click', () => { jumpTo((currentIdx + 1) % N); pauseFor(2000); });
   outer.addEventListener('mouseenter', () => { paused = true; });
   outer.addEventListener('mouseleave', () => { paused = false; });
 
-  // Touch swipe support
   let tx = 0;
   track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; paused = true; });
   track.addEventListener('touchend', e => {
     const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 40) jumpTo(((realIdx(rawPx) + (dx < 0 ? 1 : -1)) + N) % N);
+    if (Math.abs(dx) > 40) jumpTo(((currentIdx + (dx < 0 ? 1 : -1)) + N) % N);
     pauseFor(2000);
   });
 
   window.addEventListener('resize', () => applyPx(rawPx));
-
   jumpTo(0);
   animate();
 }
 
+
 /* ── 4. EXPERIENCE DROPDOWNS ── */
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.exp-toggle');
-
   toggleButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent conflict with other listeners
+      e.stopPropagation();
       const parent = button.closest('.exp-item');
       const isActive = parent.classList.contains('active');
-
-      // Close all other items for a true accordion feel
       document.querySelectorAll('.exp-item').forEach(item => {
         item.classList.remove('active');
         const btn = item.querySelector('.exp-toggle');
         if (btn) btn.innerHTML = 'View Details <span class="arrow">↓</span>';
       });
-
-      // If it wasn't active, open it
       if (!isActive) {
         parent.classList.add('active');
         button.innerHTML = 'Close Details <span class="arrow">↑</span>';
       }
     });
   });
+});
+
+
+/* ── 5. MOBILE NAV ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.nav-hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      document.querySelector('nav').classList.toggle('nav-mobile-open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('nav-mobile-open');
+      });
+    });
+  }
 });
 
 

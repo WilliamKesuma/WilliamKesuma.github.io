@@ -687,6 +687,51 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   .details-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
+/* ── EXPERIENCE IMAGE CAROUSEL ── */
+.exp-carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  position: relative;
+}
+
+.exp-carousel-track {
+  display: flex;
+  width: max-content; /* Ensures track matches content width */
+  animation: scrollExperience 20s linear infinite;
+}
+
+/* The images inside the experience detail */
+.exp-photo {
+  width: 300px; /* Adjust based on your preference */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+  flex-shrink: 0;
+}
+
+.exp-photo:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scrollExperience {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Animates half the track for seamless loop */
+}
+
+/* Adjust the grid to stack for a cleaner look */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Image carousel now takes full width */
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
+}
+
 /* Make exp-items look clickable */
 .exp-item { cursor: pointer; transition: background 0.3s ease; }
 .exp-item:hover { background: rgba(93, 184, 138, 0.03); }

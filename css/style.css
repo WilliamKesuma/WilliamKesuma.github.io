@@ -634,13 +634,23 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   min-height: 0;
 }
 
+/* ── CLEANER EXPERIENCE DETAILS ── */
 .details-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2.5rem;
+  display: block; /* Change from grid to block for top-to-bottom flow */
   padding: 2rem 0;
   border-top: 1px solid var(--line);
   margin-top: 1.5rem;
+}
+
+.details-text {
+  margin-bottom: 2rem; /* Add space between text and carousel */
+  max-width: 800px;    /* Keeps text readable */
+}
+
+/* Ensure the carousel takes full width now */
+.exp-carousel {
+  width: 100%;
+  margin: 0; 
 }
 
 .details-list {
@@ -664,13 +674,12 @@ footer p { font-size: 0.78rem; color: var(--muted); }
 }
 
 .exp-photo {
-  width: 100%;
+  width: 450px; /* Slightly larger for a high-end feel */
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--line);
-  filter: grayscale(100%);
-  transition: filter 0.4s ease, transform 0.4s ease;
+  filter: none !important;    /* Forces grayscale off */
+  border-right: 1px solid var(--line);
+  display: block;
 }
 
 .exp-photo:hover {

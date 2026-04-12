@@ -92,44 +92,64 @@
         <p class="section-label">Experience</p>
         <h2>Where I've Worked</h2>
       </div>
+
       <div class="exp-item">
         <div class="exp-meta">
           <div class="exp-date">Jan – Mar 2026</div>
           <div class="exp-company">Axrail.AI · Malaysia</div>
         </div>
-        <div>
+        <div class="exp-main">
           <div class="exp-role">AWS Developer Management Trainee</div>
-          <p class="exp-desc">Completed intensive AWS cloud architecture training covering compute, storage, networking, and security. Configured and deployed infrastructure using EC2, S3, IAM, and VPC. Preparing for AWS Certified Developer – Associate certification.</p>
+          <p class="exp-desc">Completed intensive AWS cloud architecture training covering compute, storage, networking, and security.</p>
+          
+          <button class="exp-toggle">View Details <span class="arrow">↓</span></button>
+          
+          <div class="exp-details-content">
+            <div class="details-inner">
+              <div class="details-grid">
+                <div class="details-text">
+                  <p>Configured and deployed infrastructure using EC2, S3, IAM, and VPC. Preparing for AWS Certified Developer – Associate certification.</p>
+                  <ul class="details-list">
+                    <li>Implementation of Infrastructure as Code (IaC) using AWS CDK.</li>
+                    <li>Hands-on experience with serverless architecture optimization.</li>
+                  </ul>
+                </div>
+                <div class="details-gallery">
+                  <img src="images/aws-training.jpg" alt="AWS Training Photo" class="exp-photo">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="exp-item">
         <div class="exp-meta">
           <div class="exp-date">Mar – Dec 2025</div>
           <div class="exp-company">Apple Developer Academy @ UC · Indonesia</div>
         </div>
-        <div>
+        <div class="exp-main">
           <div class="exp-role">iOS Developer &amp; Project Manager</div>
-          <p class="exp-desc">Built apps across iOS, iPadOS, and watchOS using Swift. Led agile team workflows with sprint planning in Jira and Trello. Designed wireframes and interactive prototypes in Figma.</p>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Aug 2024 – Oct 2025</div>
-          <div class="exp-company">Universitas Ciputra · Indonesia</div>
-        </div>
-        <div>
-          <div class="exp-role">Coordinator of Marketing &amp; Partnership</div>
-          <p class="exp-desc">Led digital campaigns engaging 200+ international students, increasing event attendance by 40%. Secured partnerships with 10+ global universities and managed a 10-member team.</p>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Feb 2024 – Dec 2025</div>
-          <div class="exp-company">Fairytale Wedding Organizer · Indonesia</div>
-        </div>
-        <div>
-          <div class="exp-role">Freelance Wedding Organizer</div>
-          <p class="exp-desc">Coordinated multi-vendor weddings for 200+ guests, ensuring seamless logistics and boosting client referrals through tailored guest experiences.</p>
+          <p class="exp-desc">Built apps across iOS, iPadOS, and watchOS using Swift. Led agile team workflows.</p>
+          
+          <button class="exp-toggle">View Details <span class="arrow">↓</span></button>
+          
+          <div class="exp-details-content">
+            <div class="details-inner">
+              <div class="details-grid">
+                <div class="details-text">
+                  <p>Directed sprint planning in Jira and Trello for multiple product lifecycles.</p>
+                  <ul class="details-list">
+                    <li>Developed high-fidelity interactive prototypes in Figma.</li>
+                    <li>Coordinated the development of Pelican and CatatIn apps.</li>
+                  </ul>
+                </div>
+                <div class="details-gallery">
+                  <img src="images/apple-academy.jpg" alt="Academy Project Demo" class="exp-photo">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -367,14 +387,6 @@
     <p>© 2026 William Sanjaya Kesuma</p>
     <p>Built with HTML &amp; CSS · Hosted on GitHub Pages</p>
   </footer>
-
-  <div id="expModal" class="modal-overlay">
-  <div class="modal-content">
-    <button class="modal-close" id="closeModal">&times;</button>
-    <div id="modalBody">
-      </div>
-  </div>
-</div>
 
   <script src="js/main.js"></script>
 </body>

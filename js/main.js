@@ -268,61 +268,30 @@ function initCarousel() {
   animate();
 }
 
-/* ── 4. EXPERIENCE MODAL LOGIC ── */
-const experienceData = {
-  "Axrail.AI": {
-    title: "AWS Developer Management Trainee",
-    details: `
-      <ul>
-        <li>Deep-dived into AWS Well-Architected Framework.</li>
-        <li>Configured multi-tier architectures using EC2 and VPC.</li>
-        <li>Automated infrastructure deployments via CloudFormation.</li>
-      </ul>
-    `
-  },
-  "Apple Developer Academy @ UC": {
-    title: "iOS Developer & Project Manager",
-    details: `
-      <ul>
-        <li>Managed 4+ cross-functional teams using Agile methodologies.</li>
-        <li>Architected local database solutions using SwiftData and CoreData.</li>
-        <li>Conducted user testing sessions with 20+ stakeholders for Pelican.</li>
-      </ul>
-    `
-  }
-  // Add more entries based on your exp-company names
-};
+/* ── 4. EXPERIENCE DROPDOWNS ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButtons = document.querySelectorAll('.exp-toggle');
 
-const modal = document.getElementById('expModal');
-const modalBody = document.getElementById('modalBody');
-const closeBtn = document.getElementById('closeModal');
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent conflict with other listeners
+      const parent = button.closest('.exp-item');
+      const isActive = parent.classList.contains('active');
 
-document.querySelectorAll('.exp-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const company = item.querySelector('.exp-company').textContent.split(' · ')[0];
-    const data = experienceData[company];
+      // Close all other items for a true accordion feel
+      document.querySelectorAll('.exp-item').forEach(item => {
+        item.classList.remove('active');
+        const btn = item.querySelector('.exp-toggle');
+        if (btn) btn.innerHTML = 'View Details <span class="arrow">↓</span>';
+      });
 
-    if (data) {
-      modalBody.innerHTML = `
-        <p class="section-label">Detailed Experience</p>
-        <h2 style="margin-bottom:0.5rem;">${company}</h2>
-        <h4 style="color:var(--accent); font-family:var(--sans); margin-bottom:2rem;">${data.title}</h4>
-        <div class="exp-desc">${data.details}</div>
-      `;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Stop background scroll
-    }
+      // If it wasn't active, open it
+      if (!isActive) {
+        parent.classList.add('active');
+        button.innerHTML = 'Close Details <span class="arrow">↑</span>';
+      }
+    });
   });
-});
-
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
-});
-
-// Close on outside click
-window.addEventListener('click', (e) => {
-  if (e.target === modal) closeBtn.click();
 });
 
 

@@ -593,3 +593,46 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   .timeline { padding-left: 2rem; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+/* MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 15, 13, 0.95);
+  backdrop-filter: blur(10px);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 3rem;
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover { color: var(--accent); }
+
+/* Make exp-items look clickable */
+.exp-item { cursor: pointer; transition: background 0.3s ease; }
+.exp-item:hover { background: rgba(93, 184, 138, 0.03); }

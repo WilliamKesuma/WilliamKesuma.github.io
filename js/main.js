@@ -268,6 +268,63 @@ function initCarousel() {
   animate();
 }
 
+/* ── 4. EXPERIENCE MODAL LOGIC ── */
+const experienceData = {
+  "Axrail.AI": {
+    title: "AWS Developer Management Trainee",
+    details: `
+      <ul>
+        <li>Deep-dived into AWS Well-Architected Framework.</li>
+        <li>Configured multi-tier architectures using EC2 and VPC.</li>
+        <li>Automated infrastructure deployments via CloudFormation.</li>
+      </ul>
+    `
+  },
+  "Apple Developer Academy @ UC": {
+    title: "iOS Developer & Project Manager",
+    details: `
+      <ul>
+        <li>Managed 4+ cross-functional teams using Agile methodologies.</li>
+        <li>Architected local database solutions using SwiftData and CoreData.</li>
+        <li>Conducted user testing sessions with 20+ stakeholders for Pelican.</li>
+      </ul>
+    `
+  }
+  // Add more entries based on your exp-company names
+};
+
+const modal = document.getElementById('expModal');
+const modalBody = document.getElementById('modalBody');
+const closeBtn = document.getElementById('closeModal');
+
+document.querySelectorAll('.exp-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const company = item.querySelector('.exp-company').textContent.split(' · ')[0];
+    const data = experienceData[company];
+
+    if (data) {
+      modalBody.innerHTML = `
+        <p class="section-label">Detailed Experience</p>
+        <h2 style="margin-bottom:0.5rem;">${company}</h2>
+        <h4 style="color:var(--accent); font-family:var(--sans); margin-bottom:2rem;">${data.title}</h4>
+        <div class="exp-desc">${data.details}</div>
+      `;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Stop background scroll
+    }
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+});
+
+// Close on outside click
+window.addEventListener('click', (e) => {
+  if (e.target === modal) closeBtn.click();
+});
+
 
 /* ── INIT ── */
 window.addEventListener('DOMContentLoaded', () => {

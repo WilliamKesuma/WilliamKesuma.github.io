@@ -512,14 +512,15 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   }
   .exp-carousel-track {
     display: flex;
-    width: 100%;
+    /* width is set by JS as carousel.offsetWidth * total slides */
     animation: none !important;
     transition: transform 0.35s ease;
     will-change: transform;
   }
   .exp-photo {
-    flex: 0 0 100%;
-    width: 100%;
+    flex: 0 0 auto;
+    width: 100%;        /* each photo = full carousel width, set by JS */
+    max-width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-right: none;

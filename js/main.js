@@ -285,6 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  initTypewriter();
+  initCarousel();
+});
+
 /* ── 6. MOBILE EXPERIENCE CAROUSELS ── */
 function initMobileExpCarousels() {
   if (window.innerWidth > 768) return;
@@ -293,7 +299,7 @@ function initMobileExpCarousels() {
     const track = carousel.querySelector('.exp-carousel-track');
     if (!track) return;
 
-    // Keep only unique images (remove desktop duplicates)
+    // Remove desktop duplicates, keep only the unique first half
     const allImgs = Array.from(track.querySelectorAll('.exp-photo'));
     const uniqueCount = Math.ceil(allImgs.length / 2);
     const uniqueImgs = allImgs.slice(0, uniqueCount);
@@ -302,56 +308,52 @@ function initMobileExpCarousels() {
     const total = uniqueImgs.length;
     let current = 0;
 
-    // px-based sizing so offset stays correct for every slide
-    function slideWidth() { return carousel.offsetWidth; }
-
-    function setTrackPos(px, animated) {
-      track.style.transition = animated ? 'transform 0.35s ease' : 'none';
-      track.style.transform = `translateX(${-px}px)`;
-    }
+    // JS sizes the track and each photo by pixel width so translateX works correctly.
+    // CSS aspect-ratio: 4/3 still controls height — we never set height inline.
+    function w() { return carousel.offsetWidth; }
 
     function sizeSlides() {
-      const w = slideWidth();
-      track.style.width = (w * total) + 'px';
-      uniqueImgs.forEach(img => {
-        img.style.width = w + 'px';
-        img.style.flexShrink = '0';
-      });
+      const px = w();
+      track.style.width = (px * total) + 'px';
+      uniqueImgs.forEach(function(img) { img.style.width = px + 'px'; });
     }
-    sizeSlides();
-    window.addEventListener('resize', () => {
-      sizeSlides();
-      setTrackPos(current * slideWidth(), false);
-    });
 
-    // Build dot indicators
+    function setPos(offset, animated) {
+      track.style.transition = animated ? 'transform 0.35s ease' : 'none';
+      track.style.transform = 'translateX(' + offset + 'px)';
+    }
+
+    sizeSlides();
+    window.addEventListener('resize', function() { sizeSlides(); setPos(-(current * w()), false); });
+
+    // Dot indicators
     const dotsEl = document.createElement('div');
     dotsEl.className = 'exp-carousel-dots';
-    uniqueImgs.forEach((_, i) => {
+    uniqueImgs.forEach(function(_, i) {
       const dot = document.createElement('div');
       dot.className = 'exp-carousel-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => goTo(i));
+      dot.addEventListener('click', function() { goTo(i); });
       dotsEl.appendChild(dot);
     });
     carousel.after(dotsEl);
 
     function updateDots() {
-      dotsEl.querySelectorAll('.exp-carousel-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current)
-      );
+      dotsEl.querySelectorAll('.exp-carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
     }
 
     function goTo(idx) {
       current = Math.max(0, Math.min(idx, total - 1));
-      setTrackPos(current * slideWidth(), true);
+      setPos(-(current * w()), true);
       updateDots();
     }
 
-    // Touch — direction-aware, live drag, px-based
+    // Touch — direction-aware + live drag
     let startX = 0, startY = 0, dragX = 0;
     let isHorizontal = null;
 
-    track.addEventListener('touchstart', e => {
+    track.addEventListener('touchstart', function(e) {
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       dragX = 0;
@@ -359,38 +361,30 @@ function initMobileExpCarousels() {
       track.style.transition = 'none';
     }, { passive: true });
 
-    track.addEventListener('touchmove', e => {
+    track.addEventListener('touchmove', function(e) {
       const dx = e.touches[0].clientX - startX;
       const dy = e.touches[0].clientY - startY;
-
       if (isHorizontal === null) {
         if (Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
         isHorizontal = Math.abs(dx) > Math.abs(dy);
       }
       if (!isHorizontal) return;
-
       e.preventDefault();
       dragX = dx;
-      track.style.transform = `translateX(${-(current * slideWidth()) + dragX}px)`;
+      setPos(-(current * w()) + dragX, false);
     }, { passive: false });
 
-    track.addEventListener('touchend', () => {
+    track.addEventListener('touchend', function() {
       if (!isHorizontal) return;
-      if (dragX < -40 && current < total - 1) {
-        goTo(current + 1);
-      } else if (dragX > 40 && current > 0) {
-        goTo(current - 1);
-      } else {
-        setTrackPos(current * slideWidth(), true);
-      }
+      if (dragX < -40 && current < total - 1) goTo(current + 1);
+      else if (dragX > 40 && current > 0)     goTo(current - 1);
+      else                                     setPos(-(current * w()), true);
     }, { passive: true });
+
   });
 }
 
-
-/* ── INIT ── */
-window.addEventListener('DOMContentLoaded', () => {
-  initTypewriter();
-  initCarousel();
+// Re-init on DOMContentLoaded (adds to existing listeners)
+document.addEventListener('DOMContentLoaded', function() {
   initMobileExpCarousels();
 });

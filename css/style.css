@@ -299,6 +299,14 @@ h2 {
 .project-highlights li { padding: 0.3rem 0; padding-left: 1rem; position: relative; }
 .project-highlights li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; }
 
+.project-case {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
 /* ── SKILLS ── */
 #skills { background: #131510; color: var(--text); }
 .skills-inner { max-width: 1100px; margin: 0 auto; }
@@ -553,6 +561,7 @@ footer p { font-size: 0.78rem; color: var(--muted); }
 
   h2 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
 }
+
 
 /* ── SMALL MOBILE (max 380px) ── */
 @media (max-width: 380px) {

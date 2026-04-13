@@ -293,16 +293,36 @@ function initMobileExpCarousels() {
     const track = carousel.querySelector('.exp-carousel-track');
     if (!track) return;
 
-    // Get all images, keep only the unique first half (desktop duplicates for loop)
+    // Keep only unique images (remove desktop duplicates)
     const allImgs = Array.from(track.querySelectorAll('.exp-photo'));
     const uniqueCount = Math.ceil(allImgs.length / 2);
     const uniqueImgs = allImgs.slice(0, uniqueCount);
-
-    // Remove duplicate images that were only needed for the desktop CSS scroll loop
     allImgs.slice(uniqueCount).forEach(img => img.remove());
 
     const total = uniqueImgs.length;
     let current = 0;
+
+    // px-based sizing so offset stays correct for every slide
+    function slideWidth() { return carousel.offsetWidth; }
+
+    function setTrackPos(px, animated) {
+      track.style.transition = animated ? 'transform 0.35s ease' : 'none';
+      track.style.transform = `translateX(${-px}px)`;
+    }
+
+    function sizeSlides() {
+      const w = slideWidth();
+      track.style.width = (w * total) + 'px';
+      uniqueImgs.forEach(img => {
+        img.style.width = w + 'px';
+        img.style.flexShrink = '0';
+      });
+    }
+    sizeSlides();
+    window.addEventListener('resize', () => {
+      sizeSlides();
+      setTrackPos(current * slideWidth(), false);
+    });
 
     // Build dot indicators
     const dotsEl = document.createElement('div');
@@ -315,22 +335,54 @@ function initMobileExpCarousels() {
     });
     carousel.after(dotsEl);
 
-    function goTo(idx) {
-      current = ((idx % total) + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
+    function updateDots() {
       dotsEl.querySelectorAll('.exp-carousel-dot').forEach((d, i) =>
         d.classList.toggle('active', i === current)
       );
     }
 
-    // Touch swipe support
-    let startX = 0;
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, total - 1));
+      setTrackPos(current * slideWidth(), true);
+      updateDots();
+    }
+
+    // Touch — direction-aware, live drag, px-based
+    let startX = 0, startY = 0, dragX = 0;
+    let isHorizontal = null;
+
     track.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      dragX = 0;
+      isHorizontal = null;
+      track.style.transition = 'none';
     }, { passive: true });
-    track.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+
+    track.addEventListener('touchmove', e => {
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+
+      if (isHorizontal === null) {
+        if (Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
+        isHorizontal = Math.abs(dx) > Math.abs(dy);
+      }
+      if (!isHorizontal) return;
+
+      e.preventDefault();
+      dragX = dx;
+      track.style.transform = `translateX(${-(current * slideWidth()) + dragX}px)`;
+    }, { passive: false });
+
+    track.addEventListener('touchend', () => {
+      if (!isHorizontal) return;
+      if (dragX < -40 && current < total - 1) {
+        goTo(current + 1);
+      } else if (dragX > 40 && current > 0) {
+        goTo(current - 1);
+      } else {
+        setTrackPos(current * slideWidth(), true);
+      }
     }, { passive: true });
   });
 }

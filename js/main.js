@@ -285,8 +285,60 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ── 6. MOBILE EXPERIENCE CAROUSELS ── */
+function initMobileExpCarousels() {
+  if (window.innerWidth > 768) return;
+
+  document.querySelectorAll('.exp-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.exp-carousel-track');
+    if (!track) return;
+
+    // Get all images, keep only the unique first half (desktop duplicates for loop)
+    const allImgs = Array.from(track.querySelectorAll('.exp-photo'));
+    const uniqueCount = Math.ceil(allImgs.length / 2);
+    const uniqueImgs = allImgs.slice(0, uniqueCount);
+
+    // Remove duplicate images that were only needed for the desktop CSS scroll loop
+    allImgs.slice(uniqueCount).forEach(img => img.remove());
+
+    const total = uniqueImgs.length;
+    let current = 0;
+
+    // Build dot indicators
+    const dotsEl = document.createElement('div');
+    dotsEl.className = 'exp-carousel-dots';
+    uniqueImgs.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'exp-carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+    carousel.after(dotsEl);
+
+    function goTo(idx) {
+      current = ((idx % total) + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsEl.querySelectorAll('.exp-carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+    }
+
+    // Touch swipe support
+    let startX = 0;
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  });
+}
+
+
 /* ── INIT ── */
 window.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initCarousel();
+  initMobileExpCarousels();
 });

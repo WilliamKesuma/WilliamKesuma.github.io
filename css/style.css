@@ -244,7 +244,7 @@ h2 {
 }
 .details-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 
-/* ── EXPERIENCE IMAGE CAROUSEL ── */
+/* ── EXPERIENCE IMAGE CAROUSEL — DESKTOP ── */
 .exp-carousel {
   width: 100%;
   overflow: hidden;
@@ -268,6 +268,10 @@ h2 {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.exp-carousel:hover .exp-carousel-track { animation-play-state: paused; }
+
+/* dots only visible on mobile */
+.exp-carousel-dots { display: none; }
 
 /* ── PROJECTS ── */
 #projects { background: var(--white); }
@@ -497,12 +501,45 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   }
   .exp-date { margin-bottom: 0; }
   .exp-company::before { content: '·'; margin-right: 0.25rem; color: var(--muted); }
-  .exp-photo {
+
+  /* EXPERIENCE CAROUSEL — MOBILE */
+  .exp-carousel {
     width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    touch-action: pan-y;
   }
-  .exp-carousel { width: 100%; }
+  .exp-carousel-track {
+    display: flex;
+    width: 100%;
+    animation: none !important;
+    transition: transform 0.35s ease;
+    will-change: transform;
+  }
+  .exp-photo {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-right: none;
+    border-radius: 6px;
+    display: block;
+  }
+  .exp-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .exp-carousel-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--line); border: 1px solid var(--muted);
+    cursor: pointer; transition: background 0.2s;
+  }
+  .exp-carousel-dot.active {
+    background: var(--accent); border-color: var(--accent);
+  }
 
   /* PROJECTS */
   .projects-grid { grid-template-columns: 1fr; }

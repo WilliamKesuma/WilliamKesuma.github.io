@@ -302,15 +302,21 @@ h2 {
 /* ── SKILLS ── */
 #skills { background: #131510; color: var(--text); }
 .skills-inner { max-width: 1100px; margin: 0 auto; }
-#skills h2 { color: var(--text); margin-bottom: 2rem; }
-.track-outer { overflow: hidden; position: relative; width: 100%; }
-.track { display: flex; will-change: transform; }
-.slide { min-width: 100%; }
-.slide-inner { background: transparent; padding: 1.75rem 0; min-height: 200px; }
-.slide-heading {
+#skills h2 { color: var(--text); margin-bottom: 2.5rem; }
+
+.skills-flat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.skill-category { }
+.skill-category-title {
   font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); font-weight: 500; margin-bottom: 1.1rem;
+  color: var(--accent); font-weight: 500; margin-bottom: 1rem;
   display: flex; align-items: center; gap: 0.5rem;
+}
+.skill-category-title::before {
+  content: ''; display: inline-block; width: 1rem; height: 1px; background: var(--accent);
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .skill-tag {
@@ -322,23 +328,6 @@ h2 {
 }
 .skill-tag:hover { background: rgba(93,184,138,0.22); }
 .skill-tag i { font-size: 13px; flex-shrink: 0; }
-.skill-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; }
-.skill-dots { display: flex; gap: 5px; align-items: center; }
-.dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--line); border: 1px solid var(--muted);
-  cursor: pointer; transition: background 0.2s, transform 0.2s;
-}
-.dot.active { background: var(--accent); border-color: var(--accent); transform: scale(1.35); }
-.skill-btn {
-  width: 30px; height: 30px; border: 1px solid var(--line); background: transparent;
-  color: var(--muted); font-size: 0.85rem; display: flex; align-items: center;
-  justify-content: center; cursor: pointer; border-radius: 2px;
-  transition: border-color 0.2s, color 0.2s, background 0.2s; font-family: var(--sans);
-}
-.skill-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(93,184,138,0.07); }
-.skill-counter { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
-.skill-counter b { color: var(--accent); font-weight: 500; }
 
 /* ── ACHIEVEMENTS ── */
 #achievements { background: var(--bg); }
@@ -547,7 +536,6 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   .project-card { padding: 1.75rem 1.25rem; }
 
   /* SKILLS */
-  .slide-inner { padding: 1.25rem 0; }
   .skill-tags { gap: 0.35rem; }
   .skill-tag { font-size: 0.7rem; padding: 0.2rem 0.5rem; }
 

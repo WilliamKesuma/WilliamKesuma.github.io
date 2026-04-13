@@ -155,95 +155,22 @@ const cats = [
   },
 ];
 
-function initCarousel() {
-  const track   = document.getElementById('skillTrack');
-  const dotsEl  = document.getElementById('skillDots');
-  const outer   = document.getElementById('skillOuter');
-  const prevBtn = document.getElementById('skillPrev');
-  const nextBtn = document.getElementById('skillNext');
-  const curEl   = document.getElementById('skillCur');
-  const totEl   = document.getElementById('skillTot');
-  if (!track) return;
-
-  const N = cats.length;
-  totEl.textContent = String(N).padStart(2, '0');
-
-  [cats[N - 1], ...cats, cats[0]].forEach(cat => {
-    const s = document.createElement('div');
-    s.className = 'slide';
-    s.innerHTML = `<div class="slide-inner">
-      <p class="slide-heading">${cat.title}</p>
+/* ── 3. SKILLS FLAT GRID ── */
+function initSkillsGrid() {
+  const grid = document.getElementById('skillsGrid');
+  if (!grid) return;
+  cats.forEach(cat => {
+    const section = document.createElement('div');
+    section.className = 'skill-category';
+    section.innerHTML = `
+      <p class="skill-category-title">${cat.title}</p>
       <div class="skill-tags">${
         cat.tags.map(t =>
           `<span class="skill-tag">${t.i ? `<i class="${t.i}"></i>` : ''}${t.l}</span>`
         ).join('')
-      }</div>
-    </div>`;
-    track.appendChild(s);
+      }</div>`;
+    grid.appendChild(section);
   });
-
-  cats.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => { jumpTo(i); pauseFor(2000); });
-    dotsEl.appendChild(d);
-  });
-
-  const SPEED = 0.8;
-  let rawPx = 0;
-  let currentIdx = 0;
-  let paused = false;
-  let pauseTimer = null;
-
-  function getW() { return track.querySelector('.slide').offsetWidth; }
-  function applyPx(px) { track.style.transform = `translateX(-${px}px)`; }
-  function updateUI(idx) {
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
-    curEl.textContent = String(idx + 1).padStart(2, '0');
-  }
-  function jumpTo(i) {
-    currentIdx = ((i % N) + N) % N;
-    rawPx = (currentIdx + 1) * getW();
-    applyPx(rawPx);
-    updateUI(currentIdx);
-  }
-  function pauseFor(ms) {
-    paused = true;
-    clearTimeout(pauseTimer);
-    pauseTimer = setTimeout(() => { paused = false; }, ms);
-  }
-  function animate() {
-    if (!paused) {
-      const w = getW();
-      rawPx += SPEED;
-      if (rawPx >= (N + 1) * w) rawPx -= N * w;
-      if (rawPx < w)             rawPx += N * w;
-      applyPx(rawPx);
-      const driftIdx = (((Math.round(rawPx / w) - 1) % N) + N) % N;
-      if (driftIdx !== currentIdx) {
-        currentIdx = driftIdx;
-        updateUI(currentIdx);
-      }
-    }
-    requestAnimationFrame(animate);
-  }
-
-  prevBtn.addEventListener('click', () => { jumpTo((currentIdx - 1 + N) % N); pauseFor(2000); });
-  nextBtn.addEventListener('click', () => { jumpTo((currentIdx + 1) % N); pauseFor(2000); });
-  outer.addEventListener('mouseenter', () => { paused = true; });
-  outer.addEventListener('mouseleave', () => { paused = false; });
-
-  let tx = 0;
-  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; paused = true; });
-  track.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 40) jumpTo(((currentIdx + (dx < 0 ? 1 : -1)) + N) % N);
-    pauseFor(2000);
-  });
-
-  window.addEventListener('resize', () => applyPx(rawPx));
-  jumpTo(0);
-  animate();
 }
 
 
@@ -288,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ── INIT ── */
 window.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
-  initCarousel();
+  initSkillsGrid();
 });
 
 /* ── 6. MOBILE EXPERIENCE CAROUSELS ── */

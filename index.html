@@ -4,7 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>William Sanjaya Kesuma | Portfolio</title>
+  <title>William Sanjaya Kesuma | Tech Developer & Project Manager</title>
+  <meta name="description" content="Portfolio of William Sanjaya Kesuma — Tech Developer & Project Manager specializing in iOS, AWS cloud infrastructure, and data analysis. Based in Indonesia, open to global opportunities." />
+  <meta name="keywords" content="William Kesuma, iOS Developer, AWS, Swift, Python, Project Manager, Business Analyst, Indonesia" />
+  <meta name="author" content="William Sanjaya Kesuma" />
+
+  <!-- Open Graph (LinkedIn, Facebook, Slack previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://williamkesuma.github.io/" />
+  <meta property="og:title" content="William Sanjaya Kesuma | Tech Developer & Project Manager" />
+  <meta property="og:description" content="Building scalable apps across iOS, web, and AWS cloud infrastructure. Open to full-time roles, freelance projects, and collaborations." />
+  <meta property="og:image" content="https://williamkesuma.github.io/images/Profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="William Sanjaya Kesuma | Tech Developer & Project Manager" />
+  <meta name="twitter:description" content="Building scalable apps across iOS, web, and AWS cloud infrastructure. Open to full-time roles and collaborations." />
+  <meta name="twitter:image" content="https://williamkesuma.github.io/images/Profile.jpeg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -33,7 +52,7 @@
         <span></span>
       </button>
       <div class="nav-contact">
-        <a href="mailto:Williamskesuma@gmail.com" class="nav-contact-link" title="Email">
+        <a href="/cdn-cgi/l/email-protection#2a7d434646434b4759414f595f474b6a4d474b434604494547" class="nav-contact-link" title="Email">
           <img src="images/Email.png" alt="Email">
         </a>
         <a href="https://www.linkedin.com/in/williamskesuma/" target="_blank" class="nav-contact-link" title="LinkedIn">
@@ -78,6 +97,7 @@
         <p>I'm a multidisciplinary tech developer and project manager based in Indonesia, currently completing my Bachelor of Computer Science at Universitas Ciputra Surabaya (GPA 3.69/4.0).</p>
         <p>My work spans iOS app development with Swift, cloud infrastructure on AWS, web development, and data analysis — combined with a strong track record leading cross-functional teams from ideation through delivery.</p>
         <p>I bring both technical depth and business understanding to every project, translating complex requirements into practical, user-focused solutions.</p>
+        <p>What drives me is the gap between technology and the people who use it. I'm at my best at that intersection — whether that's bridging a dev team and a client, turning messy requirements into a clean architecture, or shipping a product that actually solves a real problem.</p>
         <div class="about-stats">
           <div>
             <div class="stat-num">5+</div>
@@ -344,6 +364,7 @@
           <li>Presented to 20+ business owners &amp; investors</li>
           <li>95% positive feedback from stakeholders</li>
           <li>Tested by 12+ micro business owners in pilot phase</li>
+          <li style="color:var(--muted);font-style:italic;">Source code under academic NDA — available on request</li>
         </ul>
       </div>
       <div class="project-card">
@@ -354,6 +375,7 @@
           <li>Reduced complaint resolution time by 50–65%</li>
           <li>Decreased unresolved reports by 70%</li>
           <li>Led coordination and on-time delivery</li>
+          <li style="color:var(--muted);font-style:italic;">Source code under academic NDA — available on request</li>
         </ul>
       </div>
       <div class="project-card">
@@ -364,6 +386,7 @@
           <li>Polished high-performance player experience</li>
           <li>Highly positive peer &amp; mentor feedback</li>
           <li>End-to-end production management</li>
+          <li style="color:var(--muted);font-style:italic;">Source code under academic NDA — available on request</li>
         </ul>
       </div>
       <div class="project-card">
@@ -373,6 +396,7 @@
         <ul class="project-highlights">
           <li>80% improvement in planning confidence (user testing)</li>
           <li>Full product management &amp; design ownership</li>
+          <li style="color:var(--muted);font-style:italic;">Source code under academic NDA — available on request</li>
         </ul>
       </div>
       <div class="project-card">
@@ -383,6 +407,7 @@
           <li>Published academic study</li>
           <li>Python-based modelling pipeline</li>
           <li>Individual research project</li>
+          <li style="color:var(--muted);font-style:italic;">Research paper available on request</li>
         </ul>
       </div>
       <div class="project-card">
@@ -404,17 +429,7 @@
     <div class="skills-inner">
       <p class="section-label">Skills</p>
       <h2>What I Work With</h2>
-      <div class="track-outer" id="skillOuter">
-        <div class="track" id="skillTrack"></div>
-      </div>
-      <div class="skill-controls">
-        <div class="skill-counter"><b id="skillCur">01</b> / <span id="skillTot">07</span></div>
-        <div class="skill-dots" id="skillDots"></div>
-        <div class="skill-arrows">
-          <button class="skill-btn" id="skillPrev">&#8592;</button>
-          <button class="skill-btn" id="skillNext">&#8594;</button>
-        </div>
-      </div>
+      <div class="skills-flat-grid" id="skillsGrid"></div>
     </div>
   </section>
 
@@ -501,7 +516,7 @@
       <h2 class="contact-headline">Let's build something<br><em>great together.</em></h2>
       <p class="contact-sub">Open to full-time roles, freelance projects, and collaborations in development, cloud, or product management.</p>
       <div class="contact-cards">
-        <a href="mailto:Williamskesuma@gmail.com" class="contact-card">
+        <a href="/cdn-cgi/l/email-protection#4116282d2d28202c322a2432342c2001262c20282d6f222e2c" class="contact-card">
           <span class="contact-card-icon">✉️</span>
           <span class="contact-card-value">Email Me</span>
           <span class="contact-card-arrow">→</span>
@@ -527,10 +542,4 @@
 
   <footer>
     <p>© 2026 William Sanjaya Kesuma</p>
-    <p>Built with HTML &amp; CSS · Hosted on GitHub Pages</p>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-
-</html>
+    <p>Built with HTML &amp; CSS ·

@@ -302,9 +302,13 @@ h2 {
 .project-case {
   font-size: 0.85rem;
   color: var(--muted);
-  margin-top: 0.5rem;
   line-height: 1.6;
   font-style: italic;
+  border-left: 2px solid var(--accent);
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 4px 4px 0;
+  margin: 0.75rem 0;
 }
 
 /* ── SKILLS ── */

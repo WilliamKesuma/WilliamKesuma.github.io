@@ -1,4 +1,4 @@
-# 💻 William Kesuma - Personal Portfolio v1.0
+# 💻 William Kesuma - Personal Portfolio
 
 This repository contains the source code for my professional portfolio website. The site is designed to showcase my expertise as a Full-stack Developer and aspiring Business Analyst, featuring my work from the Apple Developer Academy and my research in Data Science.
 

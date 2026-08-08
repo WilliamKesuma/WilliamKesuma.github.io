@@ -59,8 +59,6 @@ const cats = [
       { l: 'iPadOS',       i: 'devicon-apple-plain' },
       { l: 'watchOS',      i: 'devicon-apple-plain' },
       { l: 'macOS',        i: 'devicon-apple-plain' },
-      { l: 'RoomPlan',     i: 'devicon-apple-plain' },
-      { l: 'RealityKit',   i: 'devicon-apple-plain' },
     ]
   },
   {

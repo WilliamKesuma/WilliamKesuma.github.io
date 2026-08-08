@@ -51,12 +51,24 @@ function initTypewriter() {
 /* ── 3. SKILLS CAROUSEL ── */
 const cats = [
   {
+    title: 'iOS & Mobile Development',
+    tags: [
+      { l: 'Swift',        i: 'devicon-swift-plain colored' },
+      { l: 'SwiftUI',      i: 'devicon-swift-plain colored' },
+      { l: 'iOS',          i: 'devicon-apple-plain' },
+      { l: 'iPadOS',       i: 'devicon-apple-plain' },
+      { l: 'watchOS',      i: 'devicon-apple-plain' },
+      { l: 'macOS',        i: 'devicon-apple-plain' },
+      { l: 'RoomPlan',     i: 'devicon-apple-plain' },
+      { l: 'RealityKit',   i: 'devicon-apple-plain' },
+    ]
+  },
+  {
     title: 'Languages & Frameworks',
     tags: [
       { l: 'Python',       i: 'devicon-python-plain colored' },
       { l: 'JavaScript',   i: 'devicon-javascript-plain colored' },
       { l: 'TypeScript',   i: 'devicon-typescript-plain colored' },
-      { l: 'Swift',        i: 'devicon-swift-plain colored' },
       { l: 'HTML',         i: 'devicon-html5-plain colored' },
       { l: 'CSS',          i: 'devicon-css3-plain colored' },
       { l: 'React',        i: 'devicon-react-original colored' },
@@ -64,6 +76,25 @@ const cats = [
       { l: 'REST APIs',    i: 'devicon-fastapi-plain colored' },
       { l: 'JSON',         i: 'devicon-json-plain colored' },
       { l: 'C#',           i: 'devicon-csharp-plain colored' },
+    ]
+  },
+  {
+    title: 'Design & Product',
+    tags: [
+      { l: 'Figma',              i: 'devicon-figma-plain colored' },
+      { l: 'Wireframing',        i: 'devicon-figma-plain colored' },
+      { l: 'Product Management', i: 'devicon-trello-plain colored' },
+    ]
+  },
+  {
+    title: 'Infrastructure & DevOps',
+    tags: [
+      { l: 'Git',                     i: 'devicon-git-plain colored' },
+      { l: 'GitHub',                  i: 'devicon-github-original' },
+      { l: 'Infrastructure as Code',  i: 'devicon-terraform-plain' },
+      { l: 'CI/CD',                   i: 'devicon-githubactions-plain colored' },
+      { l: 'WebSocket',               i: 'devicon-nodejs-plain colored' },
+      { l: 'Serverless Architecture', i: 'devicon-amazonwebservices-plain-wordmark colored' },
     ]
   },
   {
@@ -88,17 +119,6 @@ const cats = [
     ]
   },
   {
-    title: 'Infrastructure & DevOps',
-    tags: [
-      { l: 'Git',                     i: 'devicon-git-plain colored' },
-      { l: 'GitHub',                  i: 'devicon-github-original' },
-      { l: 'Infrastructure as Code',  i: 'devicon-terraform-plain' },
-      { l: 'CI/CD',                   i: 'devicon-githubactions-plain colored' },
-      { l: 'WebSocket',               i: 'devicon-nodejs-plain colored' },
-      { l: 'Serverless Architecture', i: 'devicon-amazonwebservices-plain-wordmark colored' },
-    ]
-  },
-  {
     title: 'Data & Analytics',
     tags: [
       { l: 'SQL',                     i: 'devicon-azuresqldatabase-plain colored' },
@@ -108,19 +128,6 @@ const cats = [
       { l: 'Time Series Forecasting', i: 'devicon-matplotlib-plain colored' },
       { l: 'Excel',                   i: 'devicon-microsoftexcel-plain colored' },
       { l: 'Google Sheets',           i: 'devicon-google-plain colored' },
-    ]
-  },
-  {
-    title: 'Design & Product',
-    tags: [
-      { l: 'Figma',              i: 'devicon-figma-plain colored' },
-      { l: 'Wireframing',        i: 'devicon-figma-plain colored' },
-      { l: 'SwiftUI',            i: 'devicon-swift-plain colored' },
-      { l: 'iOS',                i: 'devicon-apple-plain' },
-      { l: 'iPadOS',             i: 'devicon-apple-plain' },
-      { l: 'watchOS',            i: 'devicon-apple-plain' },
-      { l: 'macOS',              i: 'devicon-apple-plain' },
-      { l: 'Product Management', i: 'devicon-trello-plain colored' },
     ]
   },
   {

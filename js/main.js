@@ -1,4 +1,4 @@
-// main.js — William Sanjaya Kesuma Portfolio
+// main.js - William Sanjaya Kesuma Portfolio
 
 /* ── 1. SCROLL ANIMATIONS ── */
 const observer = new IntersectionObserver((entries) => {
@@ -243,7 +243,7 @@ function initMobileExpCarousels() {
     let current = 0;
 
     // JS sizes the track and each photo by pixel width so translateX works correctly.
-    // CSS aspect-ratio: 4/3 still controls height — we never set height inline.
+    // CSS aspect-ratio: 4/3 still controls height - we never set height inline.
     function w() { return carousel.offsetWidth; }
 
     function sizeSlides() {
@@ -283,7 +283,7 @@ function initMobileExpCarousels() {
       updateDots();
     }
 
-    // Touch — direction-aware + live drag
+    // Touch - direction-aware + live drag
     let startX = 0, startY = 0, dragX = 0;
     let isHorizontal = null;
 

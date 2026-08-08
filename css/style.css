@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────
-   style.css — William Sanjaya Kesuma Portfolio
+   style.css - William Sanjaya Kesuma Portfolio
    ───────────────────────────────────────── */
 
 /* ── RESET & VARIABLES ── */
@@ -244,7 +244,7 @@ h2 {
 }
 .details-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 
-/* ── EXPERIENCE IMAGE CAROUSEL — DESKTOP ── */
+/* ── EXPERIENCE IMAGE CAROUSEL - DESKTOP ── */
 .exp-carousel {
   width: 100%;
   overflow: hidden;
@@ -503,7 +503,7 @@ footer p { font-size: 0.78rem; color: var(--muted); }
   .exp-date { margin-bottom: 0; }
   .exp-company::before { content: '·'; margin-right: 0.25rem; color: var(--muted); }
 
-  /* EXPERIENCE CAROUSEL — MOBILE */
+  /* EXPERIENCE CAROUSEL - MOBILE */
   .exp-carousel {
     width: 100%;
     overflow: hidden;

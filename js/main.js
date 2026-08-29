@@ -51,6 +51,42 @@ function initTypewriter() {
 /* ── 3. SKILLS CAROUSEL ── */
 const cats = [
   {
+    title: 'Business Development & Stakeholder Management',
+    tags: [
+      { l: 'Stakeholder Management',   i: 'devicon-confluence-plain colored' },
+      { l: 'Requirements Elicitation', i: 'devicon-confluence-plain colored' },
+      { l: 'Client Relationship Management' },
+      { l: 'BRD Documentation',        i: 'devicon-confluence-plain colored' },
+      { l: 'UAT',                      i: 'devicon-confluence-plain colored' },
+      { l: 'Gap Analysis',             i: 'devicon-confluence-plain colored' },
+      { l: 'Process Mapping',          i: 'devicon-confluence-plain colored' },
+    ]
+  },
+  {
+    title: 'Communication & Leadership',
+    tags: [
+      { l: 'Public Speaking' },
+      { l: 'Communication' },
+      { l: 'Team Leadership' },
+      { l: 'Cross-functional Collaboration' },
+      { l: 'Conflict Resolution' },
+      { l: 'Digital Marketing' },
+    ]
+  },
+  {
+    title: 'Product & Project Management',
+    tags: [
+      { l: 'Agile / Scrum',         i: 'devicon-jira-plain colored' },
+      { l: 'Jira',                  i: 'devicon-jira-plain colored' },
+      { l: 'Trello',                i: 'devicon-trello-plain colored' },
+      { l: 'Product Management',    i: 'devicon-trello-plain colored' },
+      { l: 'Workflow Optimization' },
+      { l: 'Strategic Problem-Solving' },
+      { l: 'Time Management' },
+      { l: 'Adaptability' },
+    ]
+  },
+  {
     title: 'iOS & Mobile Development',
     tags: [
       { l: 'Swift',        i: 'devicon-swift-plain colored' },
@@ -59,40 +95,6 @@ const cats = [
       { l: 'iPadOS',       i: 'devicon-apple-plain' },
       { l: 'watchOS',      i: 'devicon-apple-plain' },
       { l: 'macOS',        i: 'devicon-apple-plain' },
-    ]
-  },
-  {
-    title: 'Languages & Frameworks',
-    tags: [
-      { l: 'Python',       i: 'devicon-python-plain colored' },
-      { l: 'JavaScript',   i: 'devicon-javascript-plain colored' },
-      { l: 'TypeScript',   i: 'devicon-typescript-plain colored' },
-      { l: 'HTML',         i: 'devicon-html5-plain colored' },
-      { l: 'CSS',          i: 'devicon-css3-plain colored' },
-      { l: 'React',        i: 'devicon-react-original colored' },
-      { l: 'Tailwind CSS', i: 'devicon-tailwindcss-plain colored' },
-      { l: 'REST APIs',    i: 'devicon-fastapi-plain colored' },
-      { l: 'JSON',         i: 'devicon-json-plain colored' },
-      { l: 'C#',           i: 'devicon-csharp-plain colored' },
-    ]
-  },
-  {
-    title: 'Design & Product',
-    tags: [
-      { l: 'Figma',              i: 'devicon-figma-plain colored' },
-      { l: 'Wireframing',        i: 'devicon-figma-plain colored' },
-      { l: 'Product Management', i: 'devicon-trello-plain colored' },
-    ]
-  },
-  {
-    title: 'Infrastructure & DevOps',
-    tags: [
-      { l: 'Git',                     i: 'devicon-git-plain colored' },
-      { l: 'GitHub',                  i: 'devicon-github-original' },
-      { l: 'Infrastructure as Code',  i: 'devicon-terraform-plain' },
-      { l: 'CI/CD',                   i: 'devicon-githubactions-plain colored' },
-      { l: 'WebSocket',               i: 'devicon-nodejs-plain colored' },
-      { l: 'Serverless Architecture', i: 'devicon-amazonwebservices-plain-wordmark colored' },
     ]
   },
   {
@@ -117,6 +119,17 @@ const cats = [
     ]
   },
   {
+    title: 'Infrastructure & DevOps',
+    tags: [
+      { l: 'Git',                     i: 'devicon-git-plain colored' },
+      { l: 'GitHub',                  i: 'devicon-github-original' },
+      { l: 'Infrastructure as Code',  i: 'devicon-terraform-plain' },
+      { l: 'CI/CD',                   i: 'devicon-githubactions-plain colored' },
+      { l: 'WebSocket',               i: 'devicon-nodejs-plain colored' },
+      { l: 'Serverless Architecture', i: 'devicon-amazonwebservices-plain-wordmark colored' },
+    ]
+  },
+  {
     title: 'Data & Analytics',
     tags: [
       { l: 'SQL',                     i: 'devicon-azuresqldatabase-plain colored' },
@@ -129,33 +142,25 @@ const cats = [
     ]
   },
   {
-    title: 'Project & BA Tools',
+    title: 'Languages & Frameworks',
     tags: [
-      { l: 'Jira',                     i: 'devicon-jira-plain colored' },
-      { l: 'Trello',                   i: 'devicon-trello-plain colored' },
-      { l: 'Requirements Elicitation', i: 'devicon-confluence-plain colored' },
-      { l: 'Process Mapping',          i: 'devicon-confluence-plain colored' },
-      { l: 'Gap Analysis',             i: 'devicon-confluence-plain colored' },
-      { l: 'UAT',                      i: 'devicon-confluence-plain colored' },
-      { l: 'BRD Documentation',        i: 'devicon-confluence-plain colored' },
-      { l: 'Agile / Scrum',            i: 'devicon-jira-plain colored' },
-      { l: 'Workflow Optimization',    i: 'devicon-confluence-plain colored' },
-      { l: 'Stakeholder Management',   i: 'devicon-confluence-plain colored' },
+      { l: 'Python',       i: 'devicon-python-plain colored' },
+      { l: 'JavaScript',   i: 'devicon-javascript-plain colored' },
+      { l: 'TypeScript',   i: 'devicon-typescript-plain colored' },
+      { l: 'HTML',         i: 'devicon-html5-plain colored' },
+      { l: 'CSS',          i: 'devicon-css3-plain colored' },
+      { l: 'React',        i: 'devicon-react-original colored' },
+      { l: 'Tailwind CSS', i: 'devicon-tailwindcss-plain colored' },
+      { l: 'REST APIs',    i: 'devicon-fastapi-plain colored' },
+      { l: 'JSON',         i: 'devicon-json-plain colored' },
+      { l: 'C#',           i: 'devicon-csharp-plain colored' },
     ]
   },
   {
-    title: 'Soft Skills & Leadership',
+    title: 'Design & Product',
     tags: [
-      { l: 'Team Leadership' },
-      { l: 'Cross-functional Collaboration' },
-      { l: 'Strategic Problem-Solving' },
-      { l: 'Conflict Resolution' },
-      { l: 'Public Speaking' },
-      { l: 'Agile Project Management' },
-      { l: 'Time Management' },
-      { l: 'Adaptability' },
-      { l: 'Communication' },
-      { l: 'Digital Marketing' },
+      { l: 'Figma',       i: 'devicon-figma-plain colored' },
+      { l: 'Wireframing', i: 'devicon-figma-plain colored' },
     ]
   },
 ];

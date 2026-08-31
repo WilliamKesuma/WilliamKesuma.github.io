@@ -2,7 +2,7 @@
 
 This repository contains the source code for my professional portfolio website. The site showcases my range as a business development and client-facing professional with real technical depth in iOS, cloud, and data - featuring my work from the Apple Developer Academy and my research in Data Science.
 
-**🌐 Live Demo:** [https://WilliamKesuma.github.io](https://WilliamKesuma.github.io)
+**🌐 Live Demo:** [Williamkesuma.vercel.app](https://williamkesuma.vercel.app)
 
 ---
 

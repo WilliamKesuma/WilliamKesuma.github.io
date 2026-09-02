@@ -49,6 +49,9 @@ function initTypewriter() {
 
 
 /* ── 3. SKILLS CAROUSEL ── */
+/* Order follows the master CV's skill hierarchy: Business Analysis &
+   Stakeholder Management → Project & Delivery Leadership → Communication →
+   Technical Execution (all technical categories grouped last). */
 const cats = [
   {
     title: 'Business Development & Stakeholder Management',
@@ -63,17 +66,6 @@ const cats = [
     ]
   },
   {
-    title: 'Communication & Leadership',
-    tags: [
-      { l: 'Public Speaking' },
-      { l: 'Communication' },
-      { l: 'Team Leadership' },
-      { l: 'Cross-functional Collaboration' },
-      { l: 'Conflict Resolution' },
-      { l: 'Digital Marketing' },
-    ]
-  },
-  {
     title: 'Product & Project Management',
     tags: [
       { l: 'Agile / Scrum',         i: 'devicon-jira-plain colored' },
@@ -84,6 +76,17 @@ const cats = [
       { l: 'Strategic Problem-Solving' },
       { l: 'Time Management' },
       { l: 'Adaptability' },
+    ]
+  },
+  {
+    title: 'Communication & Leadership',
+    tags: [
+      { l: 'Public Speaking' },
+      { l: 'Communication' },
+      { l: 'Team Leadership' },
+      { l: 'Cross-functional Collaboration' },
+      { l: 'Conflict Resolution' },
+      { l: 'Digital Marketing' },
     ]
   },
   {
